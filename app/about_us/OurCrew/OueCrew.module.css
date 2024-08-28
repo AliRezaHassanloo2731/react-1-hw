@@ -19,3 +19,9 @@
   height: 10rem;
   border-radius: 50%;
 }
+.teamImage {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: 30rem;
+}
