@@ -14,7 +14,25 @@ export default function OurPartners() {
         We collaborate with some of the most respected names in the space and
         technology industries to make every journey extraordinary.{" "}
       </p>
-      <Image className={styles.image} src={ourPartnerImage} alt="our-value" />
+      <div className={styles.grid}>
+        <img src="business_partners/alphabet-logo.png" alt="alphabet-logo" />
+        <img src="business_partners/amazon_logo.png" alt="amazon_logo" />
+        <img src="business_partners/CBC_Logo_White.png" alt="CBC_Logo_White" />
+        <img
+          src="business_partners/Microsoft-Logo-white.png"
+          alt="Microsoft-Logo-white"
+        />
+        <img
+          src="business_partners/Microsoft-Logo-white.png"
+          alt="Microsoft-Logo-white"
+        />
+        <img
+          src="business_partners/QueensLogo_white.png"
+          alt="QueensLogo_white"
+        />
+        <img src="business_partners/samsung-logo.png" alt="samsung-logo" />
+        <img src="business_partners/sodexo-logo.png" alt="sodexo-logo" />
+      </div>
     </>
   );
 }

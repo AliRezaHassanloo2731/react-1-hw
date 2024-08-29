@@ -1,12 +1,25 @@
+.content {
+  border-bottom: 1px solid gray;
+}
+.number {
+  font-size: 2.2rem;
+}
+.header {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
 .text {
   line-height: 1.6;
-  text-align: justify; /* For Edge */
-  text-align-last: center;
+  text-align: justify;
+  text-align-last: left;
+  word-spacing: normal;
   padding: 0.2rem 0.5rem;
 }
-.image {
-  display: block;
-  margin-bottom: 1rem;
-  max-width: 100%;
-  height: 30rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 5rem;
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
 }

@@ -9,7 +9,7 @@ export default function OurCrew() {
   return (
     <>
       <div className={styles.grid}>
-        <div>
+        <div className={styles.content}>
           <img
             className={styles.image}
             src="./crew/image-anousheh-ansari.png"
