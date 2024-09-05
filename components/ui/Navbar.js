@@ -34,6 +34,13 @@ export const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navbarBG} />
         <ul className={styles.navbarList}>
+          {/* {navbarItems.map((item) => {
+            <NavItem
+              key={item.title}
+              title={item.title}
+              link={item.link}
+            ></NavItem>;
+          })} */}
           {/* TASK - React 1 week 2 */}
           {/* Create a <NavItem> component, which accepts the following:  */}
           {/* title, link, isActive  */}
@@ -78,11 +85,12 @@ function NavItem({ title, link, isActive }) {
   return (
     <li
       className={classNames(styles.navbarLinks, {
-        [styles.isLinkActive]: isActive,
+        [styles.isLinkActive]:
+          navbarItems[0].link === currentPath,
       })}
     >
-      <Link href={link}>
-        <b>{title.charAt(0)}</b> {title}
+      <Link href={navbarItems[0].link}>
+        <b>01</b> {navbarItems[0].title}
       </Link>
     </li>
   );
