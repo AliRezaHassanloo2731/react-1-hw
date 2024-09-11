@@ -1,0 +1,23 @@
+.text {
+  line-height: 1.6;
+  font-size: 1.4rem;
+  font-weight: bold;
+  /* text-align: justify; */
+  /* text-align-last: center;*/
+  padding: 0.2rem 0.5rem;
+  max-width: 40%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 7rem;
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 1rem 3rem;
+}
+.image {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: 30rem;
+}
