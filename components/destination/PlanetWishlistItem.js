@@ -1,5 +1,8 @@
 // TASK - React 1 week 2
 // Move this to its own file
+
+import styles from "@/components/destination/destination.module.css";
+
 export const PlanetWishlistItem = ({
   name,
   onRemove,
