@@ -19,6 +19,7 @@ export const Crew = () => {
           <h2>The crew</h2>
           <OurCrew />
         </section>
+        <h2>Our Partners</h2>
         <OurPartners />
       </main>
     </div>

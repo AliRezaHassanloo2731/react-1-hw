@@ -3,11 +3,12 @@
 import { usePathname } from "next/navigation";
 import styles from "./Footer.module.css";
 import { Children } from "react";
+import Link from "next/link";
 
-const SocialMediaList = [
+const socialMediaList = [
   {
     title: "Linkedin",
-    url: "https://www.linkedin.com/in/alireza-hassanloo-415356239/",
+    url: "https://www.linkedin.com",
     icon: "/socialmedia/linkedin.png",
   },
   {
@@ -65,11 +66,12 @@ export const Footer = () => {
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          {SocialMediaList.map((item, index) => (
+          {socialMediaList.map((item, idx) => (
             <SocialMediaItem
               title={item.title}
               url={item.url}
               icon={item.icon}
+              key={`link-${idx}`}
             ></SocialMediaItem>
           ))}
           {/* <li>
@@ -100,23 +102,6 @@ export const Footer = () => {
     </footer>
   );
 };
-function Link({ url, children }) {
-  {
-    /* <div className={styles.pages}>
-        <h3>Pages</h3>
-        <ul>
-          <li> <Link/> </li>
-          ...
-        </ul>
-      </div> */
-  }
-  {
-    /* Docs for the Link:  https://nextjs.org/docs/pages
-        /api-reference/components/link */
-  }
-
-  return <a href={url}>{children}</a>;
-}
 
 function SocialMediaItem({ url, title, icon }) {
   return (
