@@ -2,6 +2,7 @@
 // Move this to its own file
 
 import styles from "@/components/destination/destination.module.css";
+
 export const PlanetWishlistItem = ({
   name,
   onRemove,

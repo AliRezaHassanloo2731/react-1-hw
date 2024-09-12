@@ -1,13 +1,8 @@
 "use client";
-const planets = [
-  { name: "Europa", url: "/destination/image-europa.png" },
-  { name: "Mars", url: "/destination/image-mars.png" },
-  { name: "Moon", url: "/destination/image-moon.png" },
-  { name: "Titan", url: "/destination/image-titan.png" },
-];
 
 import { useState } from "react";
 import styles from "./destination.module.css";
+import { planetsArray } from "@/app/destination/planetsArray";
 
 export const AddWishlistItem = ({ onAddWishlistItem }) => {
   const [thumbnail, onThumbnailChange] = useState(
@@ -58,24 +53,11 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
         value={imageURL}
         onChange={(e) => setImageURL(e.target.value)}
       >
-        {planets.map((planet, idx) => (
-          <option key={idx} value={planet.url}>
+        {planetsArray.map((planet, idx) => (
+          <option key={idx} value={planet.thumbnail}>
             {planet.name}
           </option>
         ))}
-
-        {/* <option value="/destination/image-europa.png">
-          EUROPA
-        </option>
-        <option value="/destination/image-mars.png">
-          MARS
-        </option>
-        <option value="/destination/image-moon.png">
-          MOON
-        </option>
-        <option value="/destination/image-titan.png">
-          TITAN
-        </option> */}
       </select>
       <button onClick={onAddItemPressed}>ADD CUSTOM</button>
     </div>

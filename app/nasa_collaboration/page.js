@@ -19,6 +19,7 @@ export const NasaCollaboration = () => {
         const roverPhotoResponse = await fetch(
           NASA_URLs.marsRoverPhoto
         ).then((response) => response.json());
+        console.log(roverPhotoResponse);
         setRoverPhoto(roverPhotoResponse);
 
         const dailyImgRes = await fetch(
@@ -59,20 +60,17 @@ export const NasaCollaboration = () => {
         </section>
         <section className="card">
           <h2>Rover Photos</h2>
-          {/* TASK - React 1 week 3 */}
-          {/* Iteratate over the roverPhoto?.photos array and display all the pictures! */}
-          {roverPhoto?.photos?.length ? (
-            <>
-              {/* TASK - React 1 week 3 */}
-              {/* Create a react component for the <RoverPhoto />, which should accept the following props */}
-              {/* 1. src: source of the img (img_src in the data from the API) */}
-              {/* 2. date: earth_date data coming from the API */}
-              {/* 3. roverName: will be in the rover object - rover.name */}
 
-              {/* TIPS: */}
-              {/* If you don't know how the data looks like you can: */}
-              {/* 1. use console.log() to write the data to the console */}
-              {/* 2. use the network tab in the developer tab - https://developer.chrome.com/docs/devtools/network */}
+          {roverPhoto?.photos?.map((photo) => (
+            <RoverPhoto
+              key={photo.id}
+              src={photo.img_src}
+              date={photo.earth_date}
+              roverName={photo.rover.name}
+            />
+          ))}
+          {/* {roverPhoto?.photos?.length ? (
+            <>
               <p>Date {roverPhoto.photos[0]?.earth_date}</p>
               <img
                 className={styles.nasaPicOfTheDayImg}
@@ -82,7 +80,7 @@ export const NasaCollaboration = () => {
             </>
           ) : (
             <p>Loading rover photos...</p>
-          )}
+          )} */}
         </section>
       </main>
     </div>
@@ -90,3 +88,17 @@ export const NasaCollaboration = () => {
 };
 
 export default NasaCollaboration;
+
+function RoverPhoto({ src, date, roverName }) {
+  return (
+    <div className={styles.roverPhotoCard}>
+      <img
+        className={styles.nasaPicOfTheDayImg}
+        src={src}
+        alt={roverName}
+      />
+      <p>Date: {date}</p>
+      <p>Rover Name: {roverName}</p>
+    </div>
+  );
+}
